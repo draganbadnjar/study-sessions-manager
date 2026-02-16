@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "study-patterns": {
+      "command": "python",
+      "args": ["mcp-servers/study-patterns/server.py"],
+      "cwd": "C:\\Users\\PC ENTER\\Desktop\\Master Burch\\IT 502 - AI-Driven Software Engineering\\Project\\mcp-servers\\study-patterns",
+      "env": {
+        "PATH": "C:\\Users\\PC ENTER\\Desktop\\Master Burch\\IT 502 - AI-Driven Software Engineering\\Project\\mcp-servers\\study-patterns\\venv\\Scripts;${PATH}"
+      }
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["@playwright/mcp@latest"]
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(n8n:*)",
+      "WebSearch",
+      "Bash(node test-login.js:*)",
+      "Bash(npm install:*)",
+      "Bash(\"venv/Scripts/pip.exe\" install \"httpx>=0.23.0,<0.28.0\")",
+      "Bash(\"venv/Scripts/pytest.exe\" tests/ -v)",
+      "Bash(\"venv/Scripts/pytest.exe\" tests/ --cov=app --cov-report=term-missing)",
+      "Bash(npm test:*)",
+      "Bash(venv/Scripts/python -m pytest:*)",
+      "Bash(venv/Scripts/pip install:*)"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "study-patterns",
+    "playwright"
+  ]
+}
