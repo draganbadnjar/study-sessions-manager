@@ -30,7 +30,14 @@ jobs:
         id: git-info
         run: echo "commit=$(git rev-parse HEAD)" >> $GITHUB_ENV
 
-      # Step 5: Deploy the application to Render
+      # Step 5: Set Render Workspace
+      - name: Set Render Workspace
+        env:
+          RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+        run: |
+          render workspace set "My Workspace" -o json
+
+      # Step 6: Deploy the application to Render
       - name: Deploy to Render
         env:
           RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
