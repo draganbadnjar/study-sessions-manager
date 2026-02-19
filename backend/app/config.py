@@ -13,6 +13,14 @@ class Settings(BaseSettings):
     class Config:
         env_file = ".env"
 
+    def get_allowed_origins(self) -> list[str]:
+        """Return list of allowed origins for CORS."""
+        origins = [self.frontend_url]
+        # Always allow localhost for development
+        if "http://localhost:5173" not in origins:
+            origins.append("http://localhost:5173")
+        return origins
+
 @lru_cache()
 def get_settings() -> Settings:
     return Settings()
