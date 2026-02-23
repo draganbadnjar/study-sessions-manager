@@ -9,6 +9,7 @@ class Settings(BaseSettings):
     database_url: str
     frontend_url: str = "http://localhost:5173"
     anthropic_api_key: str = ""
+    n8n_api_key: str = ""  # API key for n8n webhook authentication
 
     class Config:
         env_file = ".env"

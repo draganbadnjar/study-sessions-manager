@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.config import get_settings, logger
 from app.database import engine, Base
-from app.routers import auth, users, sessions, chat
+from app.routers import auth, users, sessions, chat, reminders
 
 settings = get_settings()
 
@@ -26,6 +26,7 @@ app.include_router(auth.router, prefix="/auth", tags=["Authentication"])
 app.include_router(users.router, prefix="/users", tags=["Users"])
 app.include_router(sessions.router, prefix="/sessions", tags=["Sessions"])
 app.include_router(chat.router, prefix="/users", tags=["Chat"])
+app.include_router(reminders.router, prefix="/reminders", tags=["Reminders"])
 
 
 @app.get("/", tags=["Health"])
